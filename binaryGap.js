@@ -55,3 +55,18 @@ function solution(N) {
     }
     return max
 }
+
+function solution(N) {
+    let binary = N.toString(2) 
+    let first = binary.indexOf(1)
+    let last =  binary.lastIndexOf(1)
+    let max = 0
+    if(first !== last) {
+        let newBinary = binary.slice(first, last+1)
+        let zeros = newBinary.split("1")
+        zeros.forEach(n => {
+            max = Math.max(n.length, max)
+        })
+    } 
+    return max
+}
