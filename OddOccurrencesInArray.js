@@ -53,3 +53,38 @@ function solution(A) {
         if( map[key] % 2 === 1 ) return parseInt(key)
     }
 }
+
+
+
+
+function solution(A) {
+    let dict = {}
+    for (const ele of A) {
+        dict[ele] = (dict[ele] || 0 ) + 1
+    }
+
+    for(const key in dict) {
+        if(dict[key] % 2 === 1){
+            return Number(key)
+        }
+    }
+}
+
+
+// N**2
+function solution(A) {
+    return findMatch(A)
+}
+
+const findMatch = (A) => {
+    let search = A[0]
+    let first = A.indexOf(search)
+    let last = A.lastIndexOf(search)
+    if(first !== last) {
+        A.splice(last, 1)
+        A.splice(first, 1)
+        return findMatch(A)
+    }
+    return search
+    
+}

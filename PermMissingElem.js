@@ -41,6 +41,7 @@ function solution(A) {
       const arrSum = A.reduce((a, b) => a + b, 0);
 
       // sum of all values including the missing number
+      // last number * next number / 2 equals the sum of all the value that 1..N
       const sum = (size + 1) * (size + 2) / 2;
 
       // return substruction of all - current

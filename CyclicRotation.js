@@ -63,3 +63,11 @@ function solution(A, K) {
     n.push(...beg)
     return n
 }
+
+
+function solution(A, K) {
+    let reduceK = K % A.length
+    let addToBeginning = A.slice(-reduceK)
+    let base = A.slice(0, -reduceK)
+    return addToBeginning.concat(base)
+}
