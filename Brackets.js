@@ -43,3 +43,23 @@ function solution(S) {
     return open.length === 0 ? 1 : 0
 }
 
+
+function solutions(S) {
+    let pair = {
+       "(": ")",
+       "{": "}",
+       "[": "]"
+   }
+   let open = []
+   for(let sym of S){
+       if("([{".includes(sym)){
+           open.push(sym)
+       }else{
+           let openSym = open.pop()
+           if(pair[openSym] !== sym){ 
+               return 0
+           }
+       }
+   }
+   return open.length === 0 ? 1 : 0
+}
