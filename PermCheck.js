@@ -57,9 +57,7 @@ function solution(A) {
         }
     })
     if(maxNum === size && size === countMap.size){
-        let sum = A.reduce((a,c) => a+c)
-        let sum2 = maxNum * (maxNum+1) / 2
-        if(sum === sum2) return 1
+       return 1
     }
     return 0
 }
