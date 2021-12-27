@@ -60,3 +60,24 @@ function solution(A) {
     return max > half ? A.indexOf(key) : -1
 
 }
+
+
+function solution(A) {   
+    let half = Math.floor(A.length / 2)
+    
+    let dict = {}
+    for(let ele of A){
+        dict[ele] = (dict[ele] || 0) + 1
+    }
+
+    let max = 0
+    let num = 0
+    for(let key in dict){
+        if(dict[key] > max){
+            max = dict[key]
+            num = Number(key)
+        }
+    }
+    
+    return max > half ? A.indexOf(num) : -1
+}
